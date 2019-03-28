@@ -1,0 +1,24 @@
+<div class="tabs tabs-no-animation">
+    <div role="tablist" tabindex="0" class="tabs-bar" (scroll)="onScroll($event)">
+        <div class="tabs-nav-container" [class.tabs-nav-container-scrolling]="showPaginationControls" #tabsContainer>
+            <span class="tabs-tab-prev " [class.tabs-tab-arrow-show]="showPaginationControls"
+                [class.tabs-tab-btn-disabled]="disableScrollBefore" (click)=" scrollHeader( 'before') ">
+                <i class="fa fa-angle-left tabs-tab-prev-icon"></i>
+            </span>
+            <span class="tabs-tab-next" [class.tabs-tab-arrow-show]="showPaginationControls"
+                [class.tabs-tab-btn-disabled]="disableScrollAfter" (click)=" scrollHeader( 'after') ">
+                <i class="fa fa-angle-right tabs-tab-next-icon"></i>
+            </span>
+            <div class="tabs-nav-wrap">
+                <div class="tabs-nav-scroll">
+                    <div class="tabs-nav" #navListElement (cdkObserveContent)="onContentChanges()">
+                        <!-- <div nz-tabs-ink-bar="" style="display: none; visibility: visible; transform: translate3d(139px, 0px, 0px); width: 75px;"
+                            class="tabs-ink-bar tabs-ink-bar-no-animated">
+                        </div> -->
+                        <ng-content></ng-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

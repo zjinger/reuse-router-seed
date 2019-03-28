@@ -1,0 +1,25 @@
+.tab-conent {
+    background: #ffffff;
+    padding: 10px;
+}
+
+:host ::ng-deep .ant-tabs.ant-tabs-card {
+    border-radius: 0;
+
+    .ant-tabs-tab {
+        margin-right: 0;
+        border: 0;
+        border-bottom: 1px solid #e8e8e8;
+        &:first-child {
+            border-left: 1px solid #e8e8e8;
+        }
+
+        &:nth-child(2n) {
+            border-right: 1px solid #e8e8e8;
+        }
+
+        &:nth-child(2n) {
+            border-left: 1px solid #e8e8e8;
+        }
+    }
+}

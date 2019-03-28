@@ -1,0 +1,78 @@
+// @import 'src/styles/conf/conf';
+.border-radius(@radius) {
+    border-radius: @radius;
+}
+
+@screen-xs: 480px;
+@screen-xs-min: @screen-xs;
+@screen-xs-max: (@screen-sm-min - 1);
+@screen-sm: 768px;
+@screen-sm-min: @screen-sm;
+@screen-sm-max: (@screen-md-min - 1);
+@screen-md: 992px;
+@screen-md-min: @screen-md;
+@screen-md-max: (@screen-lg-min - 1);
+@screen-lg: 1200px;
+@screen-lg-min: @screen-lg;
+@gray-lte: #d2d6de;
+.content-header {
+    position: relative; // padding: 15px 15px 0 15px; // Header Text
+    padding: 0;
+
+    >h1 {
+        margin: 0;
+        font-size: 24px;
+
+        >small {
+            font-size: 15px;
+            display: inline-block;
+            padding-left: 4px;
+            font-weight: 300;
+        }
+    }
+
+    >.breadcrumb {
+        float: right;
+        background: transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        padding: 7px 5px;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        .border-radius(2px);
+
+        >li>a {
+            color: #444;
+            text-decoration: none;
+            display: inline-block;
+
+            >.fa,
+            >.glyphicon,
+            >.ion {
+                margin-right: 5px;
+            }
+        }
+
+        >li+li:before {
+            content: '>\00a0';
+        }
+    }
+
+    @media (max-width: @screen-sm-max) {
+        >.breadcrumb {
+            position: relative;
+            margin-top: 5px;
+            top: 0;
+            right: 0;
+            float: none;
+            background: @gray-lte;
+            padding-left: 10px;
+
+            li:before {
+                color: darken(@gray-lte, 20%);
+            }
+        }
+    }
+}

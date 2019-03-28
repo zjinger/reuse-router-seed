@@ -1,0 +1,131 @@
+:host {
+    display: block;
+}
+
+.tabs {
+    font-family: "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, .65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    zoom: 1; //底部线条
+    .tabs-bar {
+        border-bottom: 1px solid #e8e8e8;
+        margin: 0;
+        outline: 0;
+        transition: padding .3s cubic-bezier(.645, .045, .355, 1);
+        .tabs-nav-container {
+            overflow: hidden;
+            font-size: 14px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            position: relative;
+            white-space: nowrap;
+            margin-bottom: -1px;
+            transition: padding .3s cubic-bezier(.645, .045, .355, 1);
+            zoom: 1;
+            height: 41px;
+            /*滚动出现*/
+            &.tabs-nav-container-scrolling {
+                padding-left: 32px;
+                padding-right: 32px;
+            }
+            /*滚动图标*/
+            .tabs-tab-next,
+            .tabs-tab-prev {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                z-index: 2;
+                width: 0;
+                height: 100%;
+                cursor: pointer;
+                border: 0;
+                background-color: transparent;
+                position: absolute;
+                text-align: center;
+                color: rgba(0, 0, 0, .45);
+                transition: width .3s cubic-bezier(.645, .045, .355, 1), opacity .3s cubic-bezier(.645, .045, .355, 1), color .3s cubic-bezier(.645, .045, .355, 1);
+                opacity: 0;
+                pointer-events: none;
+            } //前滑动按钮
+            .tabs-tab-prev {
+                left: 0;
+            } //后滑动按钮
+            .tabs-tab-next {
+                right: 2px;
+            }
+            /*图标样式*/
+            .tabs-tab-next,
+            .tabs-tab-prev {
+                .tabs-tab-next-icon,
+                .tabs-tab-prev-icon {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-variant: normal;
+                    line-height: inherit;
+                    vertical-align: baseline;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    text-transform: none;
+                }
+            }
+            /*显示图标*/
+            .tabs-tab-next.tabs-tab-arrow-show,
+            .tabs-tab-prev.tabs-tab-arrow-show {
+                opacity: 1;
+                width: 32px;
+                height: 100%;
+                pointer-events: auto;
+            }
+            /*禁用图标*/
+            .tabs-tab-btn-disabled {
+                cursor: not-allowed;
+                &:hover {
+                    color: rgba(0, 0, 0, .25);
+                }
+            }
+            /*tabs 中心区域*/
+            .tabs-nav-wrap {
+                overflow: hidden;
+                margin-bottom: -1px;
+                .tabs-nav-scroll {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    .tabs-nav {
+                        box-sizing: border-box;
+                        padding-left: 0;
+                        transition: -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
+                        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+                        transition: transform .3s cubic-bezier(.645, .045, .355, 1), -webkit-transform .3s cubic-bezier(.645, .045, .355, 1);
+                        position: relative;
+                        margin: 0;
+                        list-style: none;
+                        display: inline-block;
+                        .tabs-ink-bar {
+                            z-index: 1;
+                            position: absolute;
+                            left: 0;
+                            bottom: 1px;
+                            box-sizing: border-box;
+                            height: 2px;
+                            background-color: #1890ff;
+                            -webkit-transform-origin: 0 0;
+                            transform-origin: 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

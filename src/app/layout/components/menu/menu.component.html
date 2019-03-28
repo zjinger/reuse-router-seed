@@ -1,0 +1,17 @@
+<ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'" style="line-height: 64px;">
+  <ng-container *ngFor="let item of menuList">
+    <li nz-submenu [nzOpen]="item.open" *ngIf="item.children&&item.children.length>0;else noChildBlock">
+      <span title>{{item.title}}</span>
+      <ul>
+        <li nz-menu-item *ngFor="let subItem of item.children" [nzSelected]="subItem.selected">
+          <a title [routerLink]="subItem.link" routerLinkActive="active"> {{subItem.title}}</a>
+        </li>
+      </ul>
+    </li>
+    <ng-template #noChildBlock>
+      <li nz-menu-item [nzSelected]="item.selected">
+        <a title [routerLink]="item.link" routerLinkActive="active"> {{item.title}}</a>
+      </li>
+    </ng-template>
+  </ng-container>
+</ul>

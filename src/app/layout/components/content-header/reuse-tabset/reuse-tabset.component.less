@@ -1,0 +1,37 @@
+.tabs-tab {
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    transition: color .3s cubic-bezier(.645, .045, .355, 1);
+    cursor: pointer;
+    text-decoration: none;
+
+    i.close-icon {
+        margin-left: 5px;
+    }
+
+    border-right: 1px solid #E4EAEC;
+    color: #666666;
+    height: 40px;
+    background: #fafafa; // padding:0 16px;
+    line-height: 38px;
+
+    .nav-title {
+        padding: 0 16px;
+    }
+}
+
+.tabs-tab.tabs-tab-active {
+    color: #1890ff;
+    font-weight: 500;
+    height: 41px;
+    background: #F1F4F5;
+}
+
+:host {
+    display: block;
+}
+
+.delete-icon {
+    margin-left: 5px;
+}

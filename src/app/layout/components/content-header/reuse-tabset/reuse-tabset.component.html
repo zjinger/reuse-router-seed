@@ -1,0 +1,10 @@
+<tab-nav [selectedIndex]="selectedIndex" (onNextClick)="nextClick()" (onPrevClick)="prevClick()">
+  <div nav-tab-label [disabled]="tab.disabled" [class.tabs-tab-active]="(selectedIndex == i)"
+    *ngFor="let tab of tabList;index as i">
+    <div [context-menu]="tab" (click)="clickLabel($event,i,tab.disabled)" class="nav-title">
+      {{tab.title}}
+      <!-- <i *ngIf="tab.closable" class="app-icon-sm delete-icon" title="关闭" (click)="removeTab($event,i,false)"></i> -->
+      <i *ngIf="tab.closable" nz-icon type="close" class="ant-tabs-close-x" (click)="removeTab($event,i,false)"></i>
+    </div>
+  </div>
+</tab-nav>

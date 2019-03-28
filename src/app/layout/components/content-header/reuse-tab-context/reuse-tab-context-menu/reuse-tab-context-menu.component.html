@@ -1,0 +1,6 @@
+<ul class="menu-context">
+  <li (click)="click($event, 'close')" data-type="close" [class.menu-item-disabled]="!item.closable">关闭标签</li>
+  <li (click)="click($event, 'closeOther')" data-type="closeOther" [class.menu-item-disabled]="">关闭其它标签</li>
+  <li (click)="click($event, 'closeRight')" data-type="closeRight" [class.menu-item-disabled]="item.last">关闭右侧标签</li>
+  <!-- <li (click)="click($event, 'clear')" data-type="clear" [class.menu-item-disabled]="">清空</li> -->
+</ul>
