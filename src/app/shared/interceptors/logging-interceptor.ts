@@ -5,9 +5,7 @@ import { tap, finalize } from 'rxjs/operators';
 
 @Injectable()
 export class LoggingInterceptor implements HttpInterceptor {
-
   // constructor(private messager: MessageService) { }
-
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const started = Date.now();
     let ok: string;

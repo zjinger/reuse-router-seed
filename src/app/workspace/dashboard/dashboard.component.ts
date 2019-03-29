@@ -1,3 +1,5 @@
+import { BaseService } from './../../shared/services/base.service';
+import { DashboardService } from './dashboard.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
@@ -7,10 +9,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private service: DashboardService) {
+
+  }
 
   ngOnInit() {
     console.log('dashboard init');
+    this.service.baseService.getList({ currentPage: 1, pageRecord: 10 }).then(res => {
+      console.log(res)
+    })
   }
 
 
